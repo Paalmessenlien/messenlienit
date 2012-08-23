@@ -1,0 +1,14 @@
+eZFlowplayer installation
+
+What is eZflowplayer?
+=================================================================
+eZFlowplayer is based on Flowplayer 3.1.1 (http://flowplayer.org)
+
+Easy installation
+=================================================================
+1) Unpack ezflowplayer.zip in extension folder
+2) Import sql/flowmedia.sql in your eZ publish database
+3) Activate plugin in admin interface Setup -> Extensions
+4) Click Regenerate autoload arrays for extensions
+5) Import and install packages/flash_movie_flowplayer-1.0-1.ezpkg Setup > Packages
+6) Clear all caches
