@@ -1,0 +1,8 @@
+{set-block scope=root variable=subject}[{$contentobject_id}-{$survey.id}]{$node.name}{/set-block}
+{*"The following information was collected as the result of the survey:"|i18n('survey')*}
+Følgende informasjon er sendt inn:
+{$result|attribute(show)}
+
+{section var=question loop=$survey_questions}
+{survey_question_result_gui view=mail question=$question}
+{/section}

@@ -1,0 +1,439 @@
+
+@import url(http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css);
+@import url(http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts-min.css);
+@import url(http://yui.yahooapis.com/3.3.0/build/cssbase/base-min.css);
+@import url(http://yui.yahooapis.com/3.3.0/build/cssgrids/grids-min.css);
+
+/*
+Basic overrides and settings
+*/
+* {
+    margin:0;
+    padding:0
+}
+
+body {
+  background-color: #fff;
+
+}
+html, body {
+    height:100%;
+    font-family: Tahoma, “Lucida Grande”, “Lucida Sans Unicode”, “MS Sans Serif”, sans-serif;
+}
+/*Opera Fix*/
+
+body:before {
+    content:"";
+    height:100%;
+    float:left;
+    width:0;
+    margin-top:-32767px;
+}
+/*
+ Google fonts
+*/
+h1 { font-family: 'Lobster', arial, serif; }
+
+/* base.css, part of YUI's CSS Foundation */
+h1 {
+  /*18px via YUI Fonts CSS foundation*/
+  font-size:138.5%;
+}
+h2 {
+  /*16px via YUI Fonts CSS foundation*/
+  font-size:123.1%;
+}
+h3 {
+  /*14px via YUI Fonts CSS foundation*/
+  font-size:108%;
+}
+h1,h2,h3 {
+  /* top & bottom margin based on font size */
+  margin:1em 0;
+  font-weight: normal;
+}
+h3,h4,h5,h6,strong {
+  /*bringing boldness back to headers and the strong element*/
+  font-weight:bold;
+}
+abbr,acronym {
+  /*indicating to users that more info is available */
+  border-bottom:1px dotted #000;
+  cursor:help;
+}
+em {
+  /*bringing italics back to the em element*/
+  font-style:italic;
+}
+blockquote,ul,ol,dl {
+  /*giving blockquotes and lists room to breath*/
+  margin:1em;
+}
+ol,ul,dl {
+  /*bringing lists on to the page with breathing room */
+  margin-left:2em;
+}
+ol li {
+  /*giving OL's LIs generated numbers*/
+  list-style: decimal outside;
+}
+ul li {
+  /*giving UL's LIs generated disc markers*/
+  list-style: disc outside;
+}
+dl dd {
+  /*giving UL's LIs generated numbers*/
+  margin-left:1em;
+}
+th,td {
+  /*borders and padding to make the table readable*/
+  border:1px solid #000;
+  padding:.5em;
+}
+th {
+  /*distinguishing table headers from data cells*/
+  font-weight:bold;
+  text-align:center;
+}
+caption {
+  /*coordinated marking to match cell's padding*/
+  margin-bottom:.5em;
+  /*centered so it doesn't blend in to other content*/
+  text-align:center;
+}
+p,fieldset,table {
+  /*so things don't run into each other*/
+  margin-bottom:0.6em;
+}
+
+#wrapper {
+	width: 961px;
+	margin: 0 auto;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+}
+
+
+/* Header
+-----------------------------------------------------------------------------*/
+#header {
+	height: 165px;
+	 background-image: url("../images/header_background_dither.png");
+	 background-repeat:repeat-x;
+	 background-position:center bottom;
+}
+/* Phone buttons */
+
+#phone-buttons {
+    left: 333px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    right: 0;
+    top: 124px;
+}
+
+#phone-buttons span {
+	padding: 0;
+	margin: 0;
+	height: 41px;
+	width: 120px;
+	display: block;
+    float: left;
+	}
+span.rute {
+	 background-image: url("../images/ruteopplysningen.png");
+	 background-repeat:no-repeat;
+	}
+span.tt-bestill {
+	 background-image: url("../images/tt-bestilling.png");
+	 background-repeat:no-repeat;
+	}
+span.innlandskortet {
+	 background-image: url("../images/innlandskortet.png");
+	 background-repeat:no-repeat;
+	}
+.innlandskortet a:link, .innlandskortet a {
+	height: 30px;
+	width: 100%;
+	display: block;
+}
+span.tolga {
+	 background-image: url("../images/tolga-kortet.png");
+	 background-repeat:no-repeat;
+	}
+
+/* Main menu */
+
+#mainmenu {
+	 height: 45px;
+	 background-image: url("../images/mainmenu_background.png");
+	 background-repeat:repeat-x;
+	 background-position:center bottom;
+	 border-top: 1px solid #E0E0E0;
+	 border-left: 1px solid #E0E0E0;
+	 border-right: 1px solid #E0E0E0;
+	 margin: 0 0 5px;
+	 padding: 0 5px;
+	position: relative;
+    z-index: 9999;
+	}
+#mainmenu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	}
+#mainmenu li {
+	padding: 12px 0;
+	float: left;
+	margin: 0;
+	list-style: none;
+	border-left: 1px solid #eaeaea;
+	border-right: 1px solid #fbfbfb;
+	}
+#mainmenu ul li a.active, #mainmenu ul li a:hover {
+	background-color: #e2e2e2;
+	}
+#mainmenu a, #mainmenu a:link {
+	padding: 12px;
+	color: #333;
+	text-decoration: none;
+	font-size: 1.1em;
+	text-transform: uppercase;
+	height: 42px;
+	width: 100%;
+	}
+/* our navigation container (which is the top level ul) */
+#nav {
+        float: left;
+        padding: 0;
+        margin: 0;
+
+}
+
+/* all li's */
+#nav li {
+        float: left;
+        list-style: none;
+        z-index: 9999999999;
+}
+
+/* override float value for all sublevel li's */
+#nav ul li {
+        float: none;
+        padding: 0 12px;
+        margin: 10px 0;
+        border: none;
+}
+
+/* sub level ul's */
+#nav ul {
+
+		background-color: #e2e2e2;
+        position: absolute;
+        padding: 0;
+        margin: 13px 0;
+        left: -999em; /* we position off screen rather than display: none; */
+}
+#nav ul li a, #nav ul li a:link {
+	text-transform: none;
+	padding: 0;
+	margin: 0;
+
+	}
+#nav ul li a:hover {
+	text-decoration: underline;
+	}
+/* Here is the magic: when we hover over the li, then position the submenu ul
+        It will make it appear as if the submenu ul is appearing as a drop down */
+#nav li:hover ul {
+        left: auto; /* bring the sub menu into view (i.e. override the left: -999em;) */
+}
+/* Middle
+-----------------------------------------------------------------------------*/
+#middle {
+	width: 100%;
+	padding: 0 0 160px;
+	height: 1%;
+	position: relative;
+	background-image: url("../images/mainarea_background.png");
+	 background-repeat:repeat-x;
+	 background-position:center top;
+}
+#middle:after {
+	content: '.';
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+}
+#container {
+	width: 100%;
+	float: left;
+	overflow: hidden;
+}
+#content {
+	padding: 0 270px 0 0;
+}
+
+
+/* Sidebar Right
+-----------------------------------------------------------------------------*/
+#sideRight {
+	float: left;
+	margin-right: -3px;
+	width: 250px;
+	margin-left: -250px;
+	position: relative;
+	background: #FFACAA;
+}
+
+
+/* Footer
+-----------------------------------------------------------------------------*/
+#footer {
+	width: 100%;
+	margin: -160px auto 0;
+	height: 160px;
+	background: url("../images/mainbackground.png") repeat-x fixed left bottom;
+}
+#footer-wrapper {
+	width:961px;
+	margin: -160px auto 0;
+	height: 160px;
+}
+/* Logo */
+
+#logo {
+   float: left;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 35px;
+}
+
+/* Search */
+
+#searchwrapper {
+	width:333px;
+	height:47px;
+	background-image:url("../images/searchbox.png");
+	background-repeat:no-repeat;
+	padding:0px;
+	margin:0px;
+	position:relative; /*important*/
+	float: right;
+	top: 35px;
+}
+
+#searchwrapper form { display:inline ; }
+
+input.searchbox {
+	border:0px; /*important*/
+	background-color:transparent; /*important*/
+	position:absolute; /*important*/
+	top:10px;
+	left:9px;
+	width:256px;
+	height:28px;
+}
+
+.searchbox_submit {
+	border:0px; /*important*/
+	background-color:transparent; /*important*/
+	position:absolute; /*important*/
+	top:10px;
+	left:265px;
+	width:120px;
+	height:40px;
+}
+
+/* News scroller */
+/* container for slides */
+.images {
+	height:400px;
+	width:650px;
+	margin:0px;
+	cursor:pointer;
+}
+
+/* single slide */
+.images div {
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+	margin:0px;
+	padding:0;
+	height:400px;
+}
+
+/* header */
+.images h3 {
+    color: #059ad2;
+    font-size: 1.6em;
+    font-weight: normal;
+    margin: 0.3em 0.6em;
+}
+.images p {
+    color: #333;
+    font-size: 1em;
+    font-weight: normal;
+    margin: 0 0.6em;
+}
+.images dl {
+    background: none repeat scroll 0 0 #f8f8f6;
+    color: #059ad2;
+    font-weight: normal;
+    margin: 0;
+    padding: 0 5px;
+    position: absolute;
+    top: 275px;
+    width: 660px;
+    height: 125px;
+    z-index: 9999;
+    opacity:0.85;
+    filter:alpha(opacity=85)
+}
+.images dd {
+	margin: 0;
+	padding: 0;
+	}
+/* tabs (those little circles below slides) */
+.slidetabs {
+    position: absolute;
+    right: 320px;
+    top: 282px;
+    z-index: 99999999;
+}
+
+/* single tab */
+.slidetabs a {
+	float:left;
+	padding:0 5px;
+	margin: 0 3px;
+	display:block;
+	font-size:0.9em;
+	text-decoration: none;
+	font-size: 1.3em;
+	color: #333;
+	border: 1px solid #999898;
+}
+
+/* mouseover state */
+.slidetabs a:hover {
+  color: #059ad2;
+}
+
+/* active state (current page state) */
+.slidetabs a.current {
+  color: #059ad2;
+}
+
+
+/* disabled navigational button. is not needed when tabs are configured with rotate: true */
+.disabled {
+	visibility:hidden !important;
+}
+

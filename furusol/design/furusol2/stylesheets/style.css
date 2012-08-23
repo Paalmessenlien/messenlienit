@@ -1,0 +1,652 @@
+
+@import url(http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css);
+@import url(http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts-min.css);
+@import url(http://yui.yahooapis.com/3.3.0/build/cssbase/base-min.css);
+@import url(http://yui.yahooapis.com/3.3.0/build/cssgrids/grids-min.css);
+
+/*
+Basic overrides and settings
+*/
+* {
+    margin:0;
+    padding:0
+}
+
+body {
+  background-color: #fff;
+      background-image: url("../images/mainbackground.jpg");
+   background-repeat:repeat-x;
+   background-position:center top;
+    color: #333333;
+
+}
+html, body {
+    height:100%;
+    font-family: Tahoma, Lucida Grande, Lucida Sans Unicode, MS Sans Serif, sans-serif;
+}
+
+
+
+/* base.css, part of YUI's CSS Foundation */
+h1 {
+  /*18px via YUI Fonts CSS foundation*/
+  font-size:138.5%;
+}
+h2 {
+  /*16px via YUI Fonts CSS foundation*/
+  font-size:123.1%;
+}
+h3 {
+  /*14px via YUI Fonts CSS foundation*/
+  font-size:108%;
+}
+h1,h2,h3 {
+  /* top & bottom margin based on font size */
+  margin:1em 0;
+  font-weight: normal;
+}
+h3,h4,h5,h6,strong {
+  /*bringing boldness back to headers and the strong element*/
+  font-weight:bold;
+}
+abbr,acronym {
+  /*indicating to users that more info is available */
+  border-bottom:1px dotted #000;
+  cursor:help;
+}
+em {
+  /*bringing italics back to the em element*/
+  font-style:italic;
+}
+blockquote,ul,ol,dl {
+  /*giving blockquotes and lists room to breath*/
+  margin:1em;
+}
+ol,ul,dl {
+  /*bringing lists on to the page with breathing room */
+  margin-left:2em;
+}
+
+ol li {
+  /*giving OL's LIs generated numbers*/
+  list-style: decimal outside;
+}
+ul li {
+  /*giving UL's LIs generated disc markers*/
+  list-style: disc outside;
+   background-image: none;
+}
+
+dl dd {
+  /*giving UL's LIs generated numbers*/
+  margin-left:1em;
+}
+th,td {
+  /*borders and padding to make the table readable*/
+  padding:.5em;
+  border: 0;
+}
+th {
+  /*distinguishing table headers from data cells*/
+  font-weight:bold;
+  text-align:center;
+}
+caption {
+  /*coordinated marking to match cell's padding*/
+  margin-bottom:.5em;
+  /*centered so it doesn't blend in to other content*/
+  text-align:center;
+}
+p,fieldset,table {
+  /*so things don't run into each other*/
+  margin-bottom:0.6em;
+}
+p {
+    line-height: 1.55em;
+    margin: 0.5em 0;
+}
+a {
+  color: #36C;
+  text-decoration: none;
+  }
+#wrapper {
+  width: 961px;
+  margin: 0 auto;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  text-align: left;
+}
+#crumb  {
+  margin-left: 20px;
+  padding: 5px 0px;
+  }
+
+/* Header
+-----------------------------------------------------------------------------*/
+#topp-header {
+  height: 110px;
+}
+/* Phone buttons */
+
+/* Main menu */
+
+#mainmenu {
+	 height: 30px;
+	 margin: 0;
+	 padding: 0;
+    z-index: 10;
+	}
+#mainmenu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	}
+#mainmenu li {
+	padding: 0;
+	float: left;
+	margin: 0;
+	list-style: none;
+	border-right: 1px solid #D9D9D9;
+	}
+#mainmenu ul li a.current, #mainmenu ul li a:hover {
+	color: #7f7f7f;
+	}
+#mainmenu a, #mainmenu a:link {
+	padding: 0 15px;
+	color: #333;
+	text-decoration: none;
+	font-size: 1.2em;
+	height: 30px;
+	width: 100%;
+	}
+div#logo {
+    float: left;
+    margin: 0;
+}
+/* our navigation container (which is the top level ul) */
+#nav {
+        float: left;
+        padding: 0;
+        margin: 0;
+
+}
+
+/* all li's */
+#nav li {
+        float: left;
+        list-style: none;
+        z-index: 9999999999;
+        background-image: none;
+}
+
+/* override float value for all sublevel li's */
+#nav ul li {
+        float: none;
+        padding: 0 12px;
+        margin: 10px 0;
+        border: none;
+}
+
+/* sub level ul's */
+#nav ul {
+    display: none;
+    background-color:#E8E8E8;
+        position: absolute;
+        padding: 0;
+        margin: 13px 0;
+        width: 20%;
+}
+#nav ul li a, #nav ul li a:link {
+  text-transform: none;
+  padding: 0;
+  margin: 0;
+  }
+#nav ul li a:hover {
+  text-decoration: underline;
+  background-color:#E8E8E8;
+  }
+/* Here is the magic: when we hover over the li, then position the submenu ul
+        It will make it appear as if the submenu ul is appearing as a drop down */
+#nav li:hover ul {
+        left: auto; /* bring the sub menu into view (i.e. override the left: -999em;) */
+}
+
+#sideleft ul
+{
+list-style-type: none;
+text-align: left;
+}
+#sideleft ul li {
+
+ color: #CDCBCB;
+}
+#sideleft ul li a
+{
+text-align: left;
+font: normal 1em "Lucida Grande", "Lucida Sans Unicode", verdana, lucida, sans-serif;
+text-decoration: none;
+}
+
+#sideleft ul li a:hover
+{
+
+color: black;
+}
+
+#sideleft ul li a#current
+{
+
+color: #666;
+}
+
+/* Middle
+-----------------------------------------------------------------------------*/
+#middle {
+  width: 100%;
+  padding: 0;
+  float:left;
+}
+#container {
+  width: 100%;
+}
+#content {
+  padding: 0;
+}
+#left-23, #right-23 {
+  width: 27%;
+  }
+#left-500, #right-500px {
+  width: 73%;
+  }
+#left-250, #right-250px {
+  width: 20%;
+  border-right: 1px solid #D9D9D9;
+  }
+/* Sidebar Right
+-----------------------------------------------------------------------------*/
+#sideRight {
+  float: left;
+  margin-right: -3px;
+  width: 250px;
+  margin-left: -250px;
+  position: relative;
+  background: #FFACAA;
+}
+#sideleft {
+  float: left;
+  width: 250px;
+  position: relative;
+  border-right: 1px solid #D9D9D9;
+}
+#sideleft h4 {
+	font-size: 1.2em;
+    line-height: 2em;
+	border-bottom: 1px solid #D9D9D9;
+	font-weight: normal;
+	}
+/* Footer
+-----------------------------------------------------------------------------*/
+#footer-main {
+  width: 100%;
+  margin: 0;
+  height: 165px;
+}
+#footer-wrapper {
+  width:961px;
+  margin:  0 auto;
+  height: 165px;
+  text-align: left;
+}
+
+#footer-wrapper table {
+  padding: 15px 0;
+  border: none;
+  }
+#footer-wrapper td, #footer-wrapper tr {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  }
+#footer-wrapper ul {
+  padding: 0;
+  margin: 0;
+  }
+
+#footer-wrapper ul li {
+  background-image: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  }
+
+#footer-wrapper li {
+  padding: 0;
+  margin: 0;
+  }
+#footer-wrapper h2 {
+  padding: 0;
+  margin: 0;
+  }
+#footer-left {
+  padding: 0;
+  margin: 0;
+  width: 690px;
+  float: left;
+  }
+#footer-right {
+  padding: 0;
+  margin: 0;
+  width: 250px;
+  float: right;
+  text-align: center;
+  }
+/* Logo */
+
+#logo {
+   float: left;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 35px;
+}
+
+/* eZ Flow */
+
+#left-500 {
+  width: 700px;
+}
+#right-250px {
+  width: 250px;
+}
+
+/* Search */
+
+#searchwrapper {
+  width:180px;
+  height:30px;
+  padding:0px;
+  margin:0px;
+  position:relative; /*important*/
+  float: right;
+  top: 35px;
+}
+
+#searchwrapper form { display:inline ; }
+
+div#main-position {
+    float: right;
+    padding: 0;
+    width: 73%;
+}
+input.searchbox {
+  background-color:#fff;
+  position:absolute;
+  top:10px;
+  width:180x;
+  height:25px;
+  border: 1px solid #D9D9D9;
+	border-top: 1px solid silver;
+}
+
+.searchbox_submit {
+  border:0px; /*important*/
+  background-color:transparent; /*important*/
+  position:absolute; /*important*/
+  top:10px;
+  left: 162px;
+  width:120px;
+  height:40px;
+}
+
+/* News scroller */
+/* container for slides */
+.images {
+  height:400px;
+  width:650px;
+  margin:0px;
+  cursor:pointer;
+}
+
+/* single slide */
+.images div {
+  display:none;
+  position:absolute;
+  top:0;
+  left:0;
+  margin:0px;
+  padding:0;
+  height:400px;
+}
+
+/* header */
+.images h3 {
+    color: #059ad2;
+    font-size: 1.6em;
+    font-weight: normal;
+    margin: 0.3em 0.6em;
+}
+.images p {
+    color: #333;
+    font-size: 1em;
+    font-weight: normal;
+    margin: 0 0.6em;
+}
+.images dl {
+    background: none repeat scroll 0 0 #f8f8f6;
+    color: #059ad2;
+    font-weight: normal;
+    margin: 0;
+    padding: 0 5px;
+    position: absolute;
+    top: 275px;
+    width: 660px;
+    height: 125px;
+    z-index: 9999;
+    opacity:0.85;
+    filter:alpha(opacity=85)
+}
+.images dd {
+  margin: 0;
+  padding: 0;
+  }
+/* tabs (those little circles below slides) */
+.slidetabs {
+    float: right;
+    padding: 0 40px;
+    position: relative;
+    top: 282px;
+    z-index: 99999999;
+}
+
+/* single tab */
+.slidetabs a {
+  float:left;
+  padding:0 5px;
+  margin: 0 3px;
+  display:block;
+  font-size:0.9em;
+  text-decoration: none;
+  font-size: 1.3em;
+  color: #333;
+  border: 1px solid #999898;
+}
+
+/* mouseover state */
+.slidetabs a:hover {
+  color: #059ad2;
+}
+
+/* active state (current page state) */
+.slidetabs a.current {
+  color: #059ad2;
+}
+
+
+/* disabled navigational button. is not needed when tabs are configured with rotate: true */
+.disabled {
+  visibility:hidden !important;
+}
+.infotext {
+  padding: 0;
+  margin: 0;
+  }
+.infotext h2 {
+  margin: 0.6em 0.3em;
+  }
+.infotext h2 a  {
+  font-size: 1.6em;
+}
+.infotext dl dd {
+  padding: 0;
+  margin: 0;
+}
+
+.ruteopplysning {
+  padding: 10px;
+  background-color: #ececec;
+  height: 300px;
+}
+.attribute-header h2 a {
+  font-size: 1.6em;
+    color: #059AD2;
+    text-decoration: none;
+  }
+div#extrainfo-position {
+    float: right;
+    margin-right: -265px;
+    width: 265px;
+}
+div#extrainfo {
+    padding: 0;
+}
+
+div.block-type-items {
+    margin: 10px 0;
+    padding: 0;
+
+}
+.block-type-items h2 {
+  border-bottom: 1px solid #D9D9D9;
+    color: #333333;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    width: 95%;
+}
+
+.block-type-items ul li {
+  font-size: 1.1em;
+  color: #cdcbcb;
+    padding-left: 5px;
+    line-height: 1.6em;
+}
+.block-type-items ul {
+   margin-left: 1em;
+  }
+div.center-block {
+  margin: 0 auto;
+    text-align: center;
+}
+div.text-left {
+  text-align: left;
+}
+.yui3-u-1-4 .text-left {
+  width: 24%;
+}
+.clear { /* generic container (i.e. div) for floating buttons */
+    overflow: hidden;
+    width: 100%;
+}
+
+
+.attribute-header-block h2 {
+    background-image: url(../images/header_background.png);
+    background-position: left top;
+    background-repeat: repeat-x;
+   font-size: 1.6em;
+    font-weight: normal;
+    height: 61px;
+    line-height: 2em;
+    margin: 0;
+    padding: 0 10px;
+}
+.class-article {
+  margin: 2em 0;
+}
+
+.date {
+  color: #cdcbcb;
+}
+
+.panel_wrapper div.panel {
+    display: block;
+}
+div.attribute-header h1, div.attribute-header h1.long {
+    background-image: none;
+    color: #333;
+    font-size: 1.6em;
+    padding-bottom: 0.75em;
+    margin: 0;
+}
+.class-article, .class-folder {
+    margin: 0;
+    padding: 0 20px 0 0;
+}
+.blank, table.blank {
+border: 0;
+}
+
+div.extra-info {
+float: right;
+width: 250px;
+display: block;
+}
+
+a.button{
+	border: 1px solid #D9D9D9;
+    display: block;
+    margin-right: 6px;
+    padding-right: 18px;
+    text-decoration: none;
+    text-align: center;
+    background-color: #F5F5F5;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+}
+
+a.button span {
+    display: block;
+    line-height: 20px;
+    padding: 5px 0 5px 18px;
+}
+
+a.button:hover {
+    outline: none; /* hide dotted outline in Firefox */
+}
+
+a.button:hover span {
+    padding: 6px 0 4px 18px; /* push text down 1px */
+}
+
+input.button {
+	border: 1px solid #D9D9D9;
+    display: block;
+    margin: 5px;
+       padding: 5px;
+    text-decoration: none;
+    text-align: center;
+    background-color: #F5F5F5;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	}
+.infobox h2 {
+	border-bottom: 1px solid #D9D9D9;
+}
+div.leftcol {
+    margin: 0 10px;
+    position: relative;
+}
